@@ -19,15 +19,15 @@ const Sidebar = () => {
   }//to close the sidebar when activemenu is false and screensize is below 900
   // when small screensizes sidebar couldnt stay along until click something,
   const activeLink =
-    "flex items-center gap-5 pl-4 pt-3 pb-2.5 rounded-lg  text-md m-2";
+    "flex items-center gap-5 pl-4 pt-3 pb-2.5 rounded-lg dark:text-white text-md m-2";
   const normalLink =
     "flex items-center gap-5 pl-4 pt-3 pb-2.5 rounded-lg text-md text-gray-700 dark:text-gray-200 dark:hover:text-black hover:bg-light-gray m-2";
 
   return (
-    <div className="ml-3 md:pr-2 h-screen md:overflow-y-scroll overflow-y-scroll md:hover:overflow-y-scroll pb-10">
+    <div className="ml-3 md:pr-2 h-screen  overflow-x-hidden md:overflow-y-hidden overflow-y-scroll md:hover:overflow-y-scroll pb-10">
       {activeMenu && (
         <>
-          <div className="flex justify-between items-center">
+          <div className="flex justify-between items-center ">
             <Link
               to="/"
               onClick={handleCloseSidebar}
@@ -36,12 +36,12 @@ const Sidebar = () => {
               <SiShopware />
               <span>Shoppy</span>
             </Link>
-{/* to cose sidebar when small screensize using handleclosesidebar */}
+            {/* to cose sidebar when small screensize using handleclosesidebar */}
             <TooltipComponent content="Menu" position="BottomCenter">
               <button
                 type="button"
                 onClick={() => setActiveMenu(!activeMenu)}
-                className="text-xl rounded-full p-3  hover:bg-light-gray mt-4 block "
+                className="text-xl rounded-full p-3  hover:bg-light-gray mt-4 block pr-2"
               >
                 <MdOutlineCancel />
               </button>
